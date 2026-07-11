@@ -7,7 +7,7 @@
 
     <!-- Primary SEO -->
     <title>Dako Cafe | Authentic Ethiopian Coffee & Homemade Food in Dukem, Ethiopia</title>
-    <meta name="description" content="Hand-roasted Ethiopian coffee, traditional breakfast, pizza & fresh juice at Dako Cafe in Dukem. Order via WhatsApp or visit us daily, 8AM–10PM.">
+    <meta name="description" content="Hand-roasted Ethiopian coffee, traditional breakfast, pizza & fresh juice at Dako Cafe in Dukem. Order via WhatsApp or visit us daily, 8AM - 10PM.">
     <meta name="keywords" content="Dako Cafe, Dukem cafe, Ethiopian coffee Dukem, breakfast Dukem, pizza Dukem, cafe near me">
     <meta name="author" content="Dako Cafe">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -132,7 +132,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -141,6 +141,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+
 
     <!-- ============ SCROLL PROGRESS BAR ============ -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -153,13 +154,15 @@
                 <span class="logo-text">Dako<span class="logo-accent">Cafe</span></span>
             </a>
 
-            <ul class="nav-links" id="navLinks" role="menubar">
-                <li role="none"><a href="#home" class="nav-link active" role="menuitem">Home</a></li>
-                <li role="none"><a href="#about" class="nav-link" role="menuitem">Our Story</a></li>
-                <li role="none"><a href="#menu" class="nav-link" role="menuitem">Menu</a></li>
-                <li role="none"><a href="#gallery" class="nav-link" role="menuitem">Gallery</a></li>
-                <li role="none"><a href="#location" class="nav-link" role="menuitem">Location</a></li>
-                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+            <ul class="nav-links" id="navLinks">
+                
+                <li role="none"><a href="#home" class="nav-link active">Home</a></li>
+                <li role="none"><a href="#about" class="nav-link">Our Story</a></li>
+                <li role="none"><a href="#menu" class="nav-link">Menu</a></li>
+                <li role="none"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li role="none"><a href="#reservation" class="nav-link">Reserve</a></li>
+                <li role="none"><a href="#location" class="nav-link">Location</a></li>
+                <li role="none"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -179,7 +182,7 @@
     <!-- ============ HERO SECTION ============ -->
     <header class="hero" id="home">
         <div class="hero-bg">
-            <img src="images/hero-img.png" alt="Warm atmospheric local interior of Dako Cafe in Dukem" width="1920" height="1080">
+            <img src="images/hero-img.png" alt="Warm atmospheric local interior of Dako Cafe in Dukem" width="1920" height="1080" fetchpriority="high">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content reveal">
@@ -192,9 +195,16 @@
             <p class="hero-subtitle">
                 Experience premium local micro-lots, traditional fresh breakfast platters, and hand-crafted delicacies served with warmth in the heart of Dukem.
             </p>
+
+            <div class="hero-trust-strip" aria-label="Quick service details">
+                Open daily 8AM - 10PM
+                <span><i class="fa-solid fa-location-dot"></i> Dukem, Ethiopia</span>
+                <span><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp ordering</span>
+            </div>
+
             <div class="hero-cta">
                 <a href="#menu" class="btn btn-primary" id="heroOrderBtn">
-                    <i class="fa-solid fa-utensils"></i> Browse &amp; Order
+                    <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
                 </a>
                 <a href="#location" class="btn btn-outline" id="heroDirectionsBtn">
                     <i class="fa-solid fa-map-location-dot"></i> Get Directions
@@ -256,7 +266,7 @@
                         <p class="story-quote">
                             "We set out to create a community living room where locals, visiting business professionals, and families can gather over outstanding coffee and gourmet bistro dishes prepared from scratch daily."
                         </p>
-                        <span class="story-author">— Dako Cafe Founding Team</span>
+                            <span class="story-author">- Dako Cafe Founding Team</span>
                     </div>
 
                     <div class="about-features">
@@ -298,8 +308,8 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Gourmet Selection</span>
-                <h2 class="section-title" id="menuHeading">Our Crafted <span class="text-accent">Culinary Menu</span></h2>
-                <p class="section-desc">From traditional spiced breakfast items and hand-crafted Italian pizza to vibrant juice blends. Select items to order directly to your table or WhatsApp.</p>
+                <h2 class="section-title" id="menuHeading">Our Signature <span class="text-accent">Dishes</span></h2>
+                <p class="section-desc">From traditional spiced breakfast items and hand-crafted pizza to vibrant juice blends. Select items to order directly to your table or WhatsApp.</p>
             </div>
 
             <!-- Operational Availability Status Banner -->
@@ -313,24 +323,60 @@
                 <div class="search-bar-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
                     <input type="search" id="menuSearch" class="menu-search-input" placeholder="Search delicious food &amp; drinks..." aria-label="Search food and drinks from menu">
-                    <button id="clearSearch" class="clear-search-btn" aria-label="Clear search input" style="display: none;">&times;</button>
+                    <button id="clearSearch" class="clear-search-btn" aria-label="Clear search input">&times;</button>
                 </div>
 
                 <div class="menu-filter" role="tablist" aria-label="Menu categories">
-                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" id="filterAll">All Items</button>
-                    <button class="filter-btn" data-filter="breakfast" role="tab" aria-selected="false" id="filterBreakfast"><i class="fa-solid fa-egg"></i> Breakfast</button>
-                    <button class="filter-btn" data-filter="traditional" role="tab" aria-selected="false" id="filterTraditional"><i class="fa-solid fa-fire"></i> Traditional</button>
-                    <button class="filter-btn" data-filter="fastfood" role="tab" aria-selected="false" id="filterFastFood"><i class="fa-solid fa-burger"></i> Bistro Fast Food</button>
-                    <button class="filter-btn" data-filter="pasta" role="tab" aria-selected="false" id="filterPasta"><i class="fa-solid fa-wheat-awn"></i> Pasta</button>
-                    <button class="filter-btn" data-filter="pizza" role="tab" aria-selected="false" id="filterPizza"><i class="fa-solid fa-pizza-slice"></i> Pizza</button>
-                    <button class="filter-btn" data-filter="fish" role="tab" aria-selected="false" id="filterFish"><i class="fa-solid fa-fish"></i> Fish</button>
-                    <button class="filter-btn" data-filter="drinks" role="tab" aria-selected="false" id="filterDrinks"><i class="fa-solid fa-wine-glass"></i> Drinks</button>
-                    <button class="filter-btn" data-filter="cake" role="tab" aria-selected="false" id="filterCake"><i class="fa-solid fa-cake-candles"></i> Bakery</button>
+                    <!-- All Items -->
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" id="filterAll">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                        All Items
+                    </button>
+                    <!-- Breakfast -->
+                    <button class="filter-btn" data-filter="breakfast" role="tab" aria-selected="false" id="filterBreakfast">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
+                        Breakfast
+                    </button>
+                    <!-- Traditional -->
+                    <button class="filter-btn" data-filter="traditional" role="tab" aria-selected="false" id="filterTraditional">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                        Traditional
+                    </button>
+                    <!-- Bistro Fast Food -->
+                    <button class="filter-btn" data-filter="fastfood" role="tab" aria-selected="false" id="filterFastFood">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3"/><path d="M12 19H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3.83"/><path d="m3 11 7.77-6.04a2 2 0 0 1 2.46 0L21 11H3z"/><path d="M12.97 19.77 7 15h12.5l-3.75 4.5a2 2 0 0 1-2.78.27z"/></svg>
+                        Bistro Fast Food
+                    </button>
+                    <!-- Pasta -->
+                    <button class="filter-btn" data-filter="pasta" role="tab" aria-selected="false" id="filterPasta">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" x2="18" y1="17" y2="17"/></svg>
+                        Pasta
+                    </button>
+                    <!-- Pizza -->
+                    <button class="filter-btn" data-filter="pizza" role="tab" aria-selected="false" id="filterPizza">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
+                        Pizza
+                    </button>
+                    <!-- Fish -->
+                    <button class="filter-btn" data-filter="fish" role="tab" aria-selected="false" id="filterFish">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6z"/><path d="M18 12v.5"/><path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"/><path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 3.54-.07 7.27 2.27 9.5 2.34 2.23 6 3.04 9 1.5"/><path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4"/><path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H8c1.17-1.25 2.2-2.89 2.46-4.26"/></svg>
+                        Fish
+                    </button>
+                    <!-- Drinks -->
+                    <button class="filter-btn" data-filter="drinks" role="tab" aria-selected="false" id="filterDrinks">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 2H8.6l-.4 2h7.8l-.5-2z"/><path d="M17 6H7l1.5 9h9L19 6H7"/><path d="M4 22h16"/><path d="M11 15v7"/><path d="M13 15v7"/></svg>
+                        Drinks
+                    </button>
+                    <!-- Bakery -->
+                    <button class="filter-btn" data-filter="cake" role="tab" aria-selected="false" id="filterCake">
+                        <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2 1 2 1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+                        Bakery
+                    </button>
                 </div>
             </div>
 
             <!-- Empty State Search Result -->
-            <div id="menuEmptyState" class="menu-empty-state" style="display: none;">
+            <div id="menuEmptyState" class="menu-empty-state">
                 <i class="fa-regular fa-face-frown empty-icon"></i>
                 <h3>No delicacies found</h3>
                 <p>We couldn't find any menu items matching your request. Try adjusting your keywords!</p>
@@ -340,7 +386,87 @@
             <div class="menu-grid" role="tabpanel" aria-label="Menu items grid" id="menuGrid">
 
                 <!-- ===== BREAKFAST ITEMS ===== -->
-                <article class="menu-card reveal" data-category="breakfast" id="menuBullaGenfo">
+
+
+                <article class="menu-card reveal" data-category="breakfast" data-featured="true" id="menuQuantaFirfir">
+                    <div class="menu-card-top">
+                        <div class="menu-card-img-placeholder">
+                            <img src="images/menu-traditional.png" alt="Quanta Firfir dried spiced beef with berbere injera" class="menu-card-hover-img" loading="lazy">
+                        </div>
+                        <div class="menu-card-icon"><i class="fa-solid fa-egg"></i></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-head">
+                            <h3 class="menu-card-title">Quanta Firfir</h3>
+                            <span class="menu-card-price" data-price="420">420 ETB</span>
+                        </div>
+                        <p class="menu-card-desc">Cured, dried strips of seasoned beef jerky mixed thoroughly with soft berbere-sauced Injera rollups.</p>
+                        <div class="menu-meta-row">
+                            <span class="menu-card-tag breakfast-tag">Signature Specialty</span>
+                            <span class="prep-time"><i class="fa-regular fa-clock"></i> 12m prep</span>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="diet-badge spicy" title="Spicy"><i class="fa-solid fa-pepper-hot"></i> Spicy</span>
+                            <button class="add-to-cart-btn" aria-label="Add Quanta Firfir to cart">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card reveal" data-category="breakfast" id="menuComboThree">
+                    <div class="menu-card-top">
+                        <div class="menu-card-img-placeholder">
+                            <img src="images/menu-breakfast.png" alt="Combo Three sharing platter of traditional breakfast dishes" class="menu-card-hover-img" loading="lazy">
+                        </div>
+                        <div class="menu-card-icon"><i class="fa-solid fa-egg"></i></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-head">
+                            <h3 class="menu-card-title">Combo Three</h3>
+                            <span class="menu-card-price" data-price="550">550 ETB</span>
+                        </div>
+                        <p class="menu-card-desc">The ultimate sharing platter. Combines generous portions of three classic traditional breakfast dishes.</p>
+                        <div class="menu-meta-row">
+                            <span class="menu-card-tag breakfast-tag">Best Value Platter</span>
+                            <span class="prep-time"><i class="fa-regular fa-clock"></i> 18m prep</span>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="diet-badge premium-choice" title="Highly Recommended"><i class="fa-solid fa-thumbs-up"></i> Chef Recommend</span>
+                            <button class="add-to-cart-btn" aria-label="Add Combo Three to cart">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ===== PASTA ITEMS ===== -->
+                <article class="menu-card reveal" data-category="pasta" id="menuSpaghettiVeg">
+                    <div class="menu-card-top">
+                        <div class="menu-card-img-placeholder">
+                            <img src="images/menu-pasta.png" alt="Spaghetti Vegetable in garden tomato marinara" class="menu-card-hover-img" loading="lazy">
+                        </div>
+                        <div class="menu-card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-head">
+                            <h3 class="menu-card-title">Spaghetti Vegetable</h3>
+                            <span class="menu-card-price" data-price="250">250 ETB</span>
+                        </div>
+                        <p class="menu-card-desc">Al dente spaghetti tossed in fresh local garden tomato marinara with minced local garden herbs.</p>
+                        <div class="menu-meta-row">
+                            <span class="menu-card-tag pasta-tag">Bistro Pasta</span>
+                            <span class="prep-time"><i class="fa-regular fa-clock"></i> 10m prep</span>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="diet-badge fasting-friendly" title="Fasting Friendly"><i class="fa-solid fa-seedling"></i> Fasting</span>
+                            <button class="add-to-cart-btn" aria-label="Add Spaghetti Vegetable to cart">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                                <article class="menu-card reveal" data-category="breakfast" id="menuBullaGenfo" >
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
                             <img src="images/menu-breakfast.png" alt="Bulla Genfo traditional Ethiopian root-fiber porridge with berbere butter" class="menu-card-hover-img" loading="lazy">
@@ -421,7 +547,7 @@
                 <article class="menu-card reveal" data-category="breakfast" id="menuTibsFirfir">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Tibs Firfir torn injera sauteed with spiced beef" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-traditional.png" alt="Tibs Firfir torn injera sauteed with spiced beef" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-egg"></i></div>
                     </div>
@@ -443,90 +569,10 @@
                         </div>
                     </div>
                 </article>
-
-                <article class="menu-card reveal" data-category="breakfast" id="menuQuantaFirfir">
-                    <div class="menu-card-top">
-                        <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Quanta Firfir dried spiced beef with berbere injera" class="menu-card-hover-img" loading="lazy">
-                        </div>
-                        <div class="menu-card-icon"><i class="fa-solid fa-egg"></i></div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-head">
-                            <h3 class="menu-card-title">Quanta Firfir</h3>
-                            <span class="menu-card-price" data-price="420">420 ETB</span>
-                        </div>
-                        <p class="menu-card-desc">Cured, dried strips of seasoned beef jerky mixed thoroughly with soft berbere-sauced Injera rollups.</p>
-                        <div class="menu-meta-row">
-                            <span class="menu-card-tag breakfast-tag">Signature Specialty</span>
-                            <span class="prep-time"><i class="fa-regular fa-clock"></i> 12m prep</span>
-                        </div>
-                        <div class="menu-card-footer">
-                            <span class="diet-badge spicy" title="Spicy"><i class="fa-solid fa-pepper-hot"></i> Spicy</span>
-                            <button class="add-to-cart-btn" aria-label="Add Quanta Firfir to cart">
-                                <i class="fa-solid fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="menu-card reveal" data-category="breakfast" id="menuComboThree">
-                    <div class="menu-card-top">
-                        <div class="menu-card-img-placeholder">
-                            <img src="images/menu-breakfast.png" alt="Combo Three sharing platter of traditional breakfast dishes" class="menu-card-hover-img" loading="lazy">
-                        </div>
-                        <div class="menu-card-icon"><i class="fa-solid fa-egg"></i></div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-head">
-                            <h3 class="menu-card-title">Combo Three</h3>
-                            <span class="menu-card-price" data-price="550">550 ETB</span>
-                        </div>
-                        <p class="menu-card-desc">The ultimate sharing platter. Combines generous portions of three classic traditional breakfast dishes.</p>
-                        <div class="menu-meta-row">
-                            <span class="menu-card-tag breakfast-tag">Best Value Platter</span>
-                            <span class="prep-time"><i class="fa-regular fa-clock"></i> 18m prep</span>
-                        </div>
-                        <div class="menu-card-footer">
-                            <span class="diet-badge premium-choice" title="Highly Recommended"><i class="fa-solid fa-thumbs-up"></i> Chef Recommend</span>
-                            <button class="add-to-cart-btn" aria-label="Add Combo Three to cart">
-                                <i class="fa-solid fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- ===== PASTA ITEMS ===== -->
-                <article class="menu-card reveal" data-category="pasta" id="menuSpaghettiVeg">
-                    <div class="menu-card-top">
-                        <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Spaghetti Vegetable in garden tomato marinara" class="menu-card-hover-img" loading="lazy">
-                        </div>
-                        <div class="menu-card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-head">
-                            <h3 class="menu-card-title">Spaghetti Vegetable</h3>
-                            <span class="menu-card-price" data-price="250">250 ETB</span>
-                        </div>
-                        <p class="menu-card-desc">Al dente spaghetti tossed in fresh local garden tomato marinara with minced local garden herbs.</p>
-                        <div class="menu-meta-row">
-                            <span class="menu-card-tag pasta-tag">Bistro Pasta</span>
-                            <span class="prep-time"><i class="fa-regular fa-clock"></i> 10m prep</span>
-                        </div>
-                        <div class="menu-card-footer">
-                            <span class="diet-badge fasting-friendly" title="Fasting Friendly"><i class="fa-solid fa-seedling"></i> Fasting</span>
-                            <button class="add-to-cart-btn" aria-label="Add Spaghetti Vegetable to cart">
-                                <i class="fa-solid fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
                 <article class="menu-card reveal" data-category="pasta" id="menuSpaghettiMeat">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Spaghetti Meat Sauce with slow-simmered Bolognese beef" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pasta.png" alt="Spaghetti Meat Sauce with slow-simmered Bolognese beef" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
                     </div>
@@ -552,7 +598,7 @@
                 <article class="menu-card reveal" data-category="pasta" id="menuSpaghettiTuna">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Spaghetti with Tuna, olive oil, garlic, and olives" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pasta.png" alt="Spaghetti with Tuna, olive oil, garlic, and olives" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
                     </div>
@@ -579,7 +625,7 @@
                 <article class="menu-card reveal" data-category="pizza" id="menuVegPizza">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Vegetable Pizza with peppers, onions, mushrooms, and olives" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pizza.png" alt="Vegetable Pizza with peppers, onions, mushrooms, and olives" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-pizza-slice"></i></div>
                     </div>
@@ -605,7 +651,7 @@
                 <article class="menu-card reveal" data-category="pizza" id="menuMargarita">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Margarita Pizza with tomato sauce, mozzarella, and basil" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pizza.png" alt="Margarita Pizza with tomato sauce, mozzarella, and basil" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-pizza-slice"></i></div>
                     </div>
@@ -631,7 +677,7 @@
                 <article class="menu-card reveal" data-category="pizza" id="menuPepperoni">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Pepperoni Pizza with crisped beef pepperoni and melted mozzarella" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pizza.png" alt="Pepperoni Pizza with crisped beef pepperoni and melted mozzarella" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-pizza-slice"></i></div>
                     </div>
@@ -657,7 +703,7 @@
                 <article class="menu-card reveal" data-category="pizza" id="menuChickenPizza">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Chicken Pizza with grilled chicken, mushrooms, and garlic sauce" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pizza.png" alt="Chicken Pizza with grilled chicken, mushrooms, and garlic sauce" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-pizza-slice"></i></div>
                     </div>
@@ -683,7 +729,7 @@
                 <article class="menu-card reveal" data-category="pizza" id="menuSpecialPizza">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Special Pizza loaded with beef, chicken, pepperoni, and onions" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-pizza.png" alt="Special Pizza loaded with beef, chicken, pepperoni, and onions" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-pizza-slice"></i></div>
                     </div>
@@ -710,7 +756,7 @@
                 <article class="menu-card reveal" data-category="fish" id="menuFishCutlet">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Fish Cutlet golden fried with breadcrumbs and lime" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-fish.png" alt="Fish Cutlet golden fried with breadcrumbs and lime" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-fish"></i></div>
                     </div>
@@ -736,7 +782,7 @@
                 <article class="menu-card reveal" data-category="fish" id="menuFishGoulash">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Fish Goulash simmered in spiced tomato and onion sauce" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-fish.png" alt="Fish Goulash simmered in spiced tomato and onion sauce" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-fish"></i></div>
                     </div>
@@ -762,7 +808,7 @@
                 <article class="menu-card reveal" data-category="fish" id="menuFishChips">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Fish and Chips hand-battered and fried with potato chips" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-fish.png" alt="Fish and Chips hand-battered and fried with potato chips" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-fish"></i></div>
                     </div>
@@ -789,7 +835,7 @@
                 <article class="menu-card reveal" data-category="traditional" id="menuShiroWot">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Shiro Wot ground chickpea stew served with injera" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-traditional.png" alt="Shiro Wot ground chickpea stew served with injera" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-fire"></i></div>
                     </div>
@@ -815,7 +861,7 @@
                 <article class="menu-card reveal" data-category="traditional" id="menuTegabino">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Tegabino Shiro clay pot chickpea stew with injera" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-traditional.png" alt="Tegabino Shiro clay pot chickpea stew with injera" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-fire"></i></div>
                     </div>
@@ -841,7 +887,7 @@
                 <article class="menu-card reveal" data-category="traditional" id="menuBozenaShiro">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Bozena Shiro claypot stew with shredded dry beef" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-traditional.png" alt="Bozena Shiro claypot stew with shredded dry beef" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-fire"></i></div>
                     </div>
@@ -868,7 +914,7 @@
                 <article class="menu-card reveal" data-category="fastfood" id="menuNormalBurger">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Normal Burger with grilled beef patty, lettuce, and tomato" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-burger.png" alt="Normal Burger with grilled beef patty, lettuce, and tomato" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-burger"></i></div>
                     </div>
@@ -894,7 +940,7 @@
                 <article class="menu-card reveal" data-category="fastfood" id="menuCheeseBurger">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Cheese Burger with double melted cheddar and pickles" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-burger.png" alt="Cheese Burger with double melted cheddar and pickles" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-burger"></i></div>
                     </div>
@@ -974,7 +1020,7 @@
                 <article class="menu-card reveal" data-category="cake" id="menuTiramisu">
                     <div class="menu-card-top">
                         <div class="menu-card-img-placeholder">
-                            <img src="images/gallery-food.png" alt="Tiramisu Cake with espresso-soaked sponge and cream" class="menu-card-hover-img" loading="lazy">
+                            <img src="images/menu-cake.png" alt="Tiramisu Cake with espresso-soaked sponge and cream" class="menu-card-hover-img" loading="lazy">
                         </div>
                         <div class="menu-card-icon"><i class="fa-solid fa-cake-candles"></i></div>
                     </div>
@@ -1030,7 +1076,7 @@
             <div class="section-header reveal">
                 <span class="section-tag">Visual Atmosphere</span>
                 <h2 class="section-title" id="galleryHeading">A Glimpse Inside <span class="text-accent">Our Space</span></h2>
-                <p class="section-desc">Take a visual tour of our cozy interior, hand-roasting rituals, and freshly decorated food creations.</p>
+                <p class="section-desc">Take a visual tour of our cozy interior, hand-roasting rituals, and freshly prepared food creations.</p>
             </div>
 
             <!-- Authentic Gallery Grid with lazy loading -->
@@ -1069,13 +1115,61 @@
         </div>
     </section>
 
+    <!-- ============ ETHIOPIAN COFFEE CEREMONY SECTION ============ -->
+    <section class="section coffee-ceremony" id="ceremony" aria-labelledby="ceremonyHeading">
+        <div class="ceremony-bg-ambient" aria-hidden="true"></div>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Living Tradition</span>
+                <h2 class="section-title" id="ceremonyHeading">The Ethiopian <span class="text-accent">Coffee Ceremony</span></h2>
+                <p class="section-desc">Coffee was born in Ethiopia. We honor its roots with every cup - from raw green bean to the final sip shared in community.</p>
+            </div>
+
+            <div class="ceremony-steps reveal">
+                <div class="ceremony-step">
+                    <div class="ceremony-step-icon">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                        <span class="ceremony-step-num">01</span>
+                    </div>
+                    <h3>Roasting</h3>
+                    <p>Raw green Arabica beans are hand-roasted over an open flame in a traditional <em>menkeshkesh</em> pan, filling the room with an intoxicating smoky aroma.</p>
+                </div>
+                <div class="ceremony-connector" aria-hidden="true"><span></span></div>
+                <div class="ceremony-step">
+                    <div class="ceremony-step-icon">
+                        <i class="fa-solid fa-mortar-pestle"></i>
+                        <span class="ceremony-step-num">02</span>
+                    </div>
+                    <h3>Grinding</h3>
+                    <p>Freshly roasted beans are ground by hand in a wooden mortar — the <em>mukecha</em> — releasing rich oils and an intense, earthy fragrance.</p>
+                </div>
+                <div class="ceremony-connector" aria-hidden="true"><span></span></div>
+                <div class="ceremony-step">
+                    <div class="ceremony-step-icon">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        <span class="ceremony-step-num">03</span>
+                    </div>
+                    <h3>Brewing &amp; Serving</h3>
+                    <p>Ground coffee brews slowly in a clay <em>jebena</em> pot over embers. Served in small cups called <em>si'ni</em> — three rounds, each with its own name and spirit.</p>
+                </div>
+            </div>
+
+            <div class="ceremony-cta reveal">
+                <p class="ceremony-tagline"><i class="fa-solid fa-quote-left"></i> <em>Buna dabo naw</em> — Coffee is our bread. Come experience the ceremony at Dako Cafe.</p>
+                <a href="#menu" class="btn btn-primary" id="ceremonyOrderBtn">
+                    <i class="fa-solid fa-mug-hot"></i> Order Specialty Coffee
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ============ LOCATION & BUSINESS INFO SECTION ============ -->
     <section class="section location" id="location" aria-labelledby="locationHeading">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Find Us Today</span>
                 <h2 class="section-title" id="locationHeading">Visit Our Bistro in <span class="text-accent">Dukem</span></h2>
-                <p class="section-desc">We are situated right on the main commercial highway of Dukem, Ethiopia. Perfect parking and access.</p>
+                <p class="section-desc">We are situated right on the main commercial highway of Dukem, Ethiopia. Easy parking and quick access.</p>
             </div>
 
             <div class="location-grid reveal">
@@ -1084,7 +1178,7 @@
                     <div class="map-overlay" id="mapOverlay" aria-hidden="true">
                         <span class="map-overlay-text"><i class="fa-solid fa-map"></i> Click to Interact with Map</span>
                     </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.891534223517!2d38.90867467501593!3d8.787255491264734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b732d0125f15d%3A0xd74b4dab81094f32!2sDako%20Cafe!5e1!3m2!1sen!2set!4v1776095537380!5m2!1sen!2set" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapIframe" title="Interactive map location of Dako Cafe in Dukem"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.891534223517!2d38.90867467501593!3d8.787255491264734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b732d0125f15d%3A0xd74b4dab81094f32!2sDako%20Cafe!5e1!3m2!1sen!2set!4v1776095537380!5m2!1sen!2set" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapIframe" title="Interactive map location of Dako Cafe in Dukem"></iframe>
                 </div>
 
                 <div class="location-details">
@@ -1108,8 +1202,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">Monday – Sunday</th>
-                                    <td>8:00 AM – 10:00 PM <span class="timezone-lbl">(GMT+3)</span></td>
+                                    <th scope="row">Monday - Sunday</th>
+                                    <td>8:00 AM - 10:00 PM <span class="timezone-lbl">(GMT+3)</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1181,7 +1275,7 @@
                     </p>
                     <div class="review-author">
                         <strong>Abdi K.</strong>
-                        <span>Verified Local Diner • Google Local Guide</span>
+                        <span>Verified Local Diner - Google Local Guide</span>
                     </div>
                 </div>
                 <div class="review-card">
@@ -1191,7 +1285,7 @@
                     </p>
                     <div class="review-author">
                         <strong>Hanna T.</strong>
-                        <span>Verified Guest • Corporate Consultant</span>
+                        <span>Verified Guest - Corporate Consultant</span>
                     </div>
                 </div>
                 <div class="review-card">
@@ -1201,14 +1295,14 @@
                     </p>
                     <div class="review-author">
                         <strong>Michael S.</strong>
-                        <span>Regular Customer • Dukem Resident</span>
+                        <span>Regular Customer - Dukem Resident</span>
                     </div>
                 </div>
             </div>
 
             <!-- Authentic Instagram Feed Placeholder -->
             <div class="instagram-feed-wrapper reveal">
-                <h3 class="instagram-heading"><i class="fa-brands fa-instagram"></i> Follow Our Coffee Journey <span>@DakoCafeDukem</span></h3>
+                <h3 class="instagram-heading"><i class="fa-brands fa-tiktok"></i> Follow Our Coffee Journey <a class="social-feed-link" href="https://www.tiktok.com/@dako.cafe" target="_blank" rel="noopener noreferrer">@DakoCafeDukem</a></h3>
                 <div class="instagram-grid">
                     <!-- Real local aesthetic visual representations of fresh cafe assets -->
                     <div class="instagram-item">
@@ -1228,6 +1322,115 @@
                         <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TABLE RESERVATION SECTION ============ -->
+    <section class="section reservation" id="reservation" aria-labelledby="reservationHeading">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Book Your Table</span>
+                <h2 class="section-title" id="reservationHeading">Reserve Your <span class="text-accent">Perfect Spot</span></h2>
+                <p class="section-desc">Plan your visit ahead of time. Fill in your details and we'll confirm your table via WhatsApp instantly.</p>
+            </div>
+
+            <div class="reservation-card reveal">
+                <div class="reservation-info">
+                    <h3 class="res-info-heading">Why Reserve?</h3>
+                    <div class="reservation-feature">
+                        <div class="res-feature-icon"><i class="fa-solid fa-table"></i></div>
+                        <div>
+                            <strong>Indoor &amp; Outdoor Seating</strong>
+                            <p>Cozy indoor tables and a shaded outdoor patio, guaranteed for your arrival</p>
+                        </div>
+                    </div>
+                    <div class="reservation-feature">
+                        <div class="res-feature-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <strong>Groups Welcome</strong>
+                            <p>Accommodating groups from 2 to 20+ for corporate and family occasions</p>
+                        </div>
+                    </div>
+                    <div class="reservation-feature">
+                        <div class="res-feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <strong>Priority Service</strong>
+                            <p>Reserved guests get seated immediately with dedicated barista attention</p>
+                        </div>
+                    </div>
+                    <div class="reservation-feature">
+                        <div class="res-feature-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <strong>Instant WhatsApp Confirmation</strong>
+                            <p>We reply within minutes with your table confirmation code</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="reservation-form" id="reservationForm" novalidate>
+                    <div class="res-form-header">
+                        <h3 class="res-form-title">Book Now</h3>
+                    <span class="res-form-badge">Free | No Card Required</span>
+                    </div>
+                    <div class="res-form-row">
+                        <div class="form-group">
+                            <label for="resName" class="form-label">Your Name</label>
+                            <input type="text" id="resName" name="resName" class="form-input" placeholder="Abebe Girma" autocomplete="name" required aria-required="true">
+                            <span class="error-msg">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="resPhone" class="form-label">Phone Number</label>
+                            <input type="tel" id="resPhone" name="resPhone" class="form-input" placeholder="+251 9..." autocomplete="tel" required aria-required="true">
+                            <span class="error-msg">Please enter your phone</span>
+                        </div>
+                    </div>
+                    <div class="res-form-row">
+                        <div class="form-group">
+                            <label for="resDate" class="form-label">Date</label>
+                            <input type="date" id="resDate" name="resDate" class="form-input" required aria-required="true">
+                            <span class="error-msg">Please select a date</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="resTime" class="form-label">Time</label>
+                            <select id="resTime" name="resTime" class="form-input" required aria-required="true">
+                                <option value="">Select time...</option>
+                                <option value="8:00 AM">8:00 AM</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="12:00 PM">12:00 PM (Noon)</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                                <option value="5:00 PM">5:00 PM</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="9:00 PM">9:00 PM</option>
+                            </select>
+                            <span class="error-msg">Please select a time</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Number of Guests</label>
+                        <div class="guest-stepper" id="guestStepper">
+                            <button type="button" class="stepper-btn" id="guestMinus" aria-label="Decrease number of guests">-</button>
+                            <span class="stepper-count" id="guestCount">2</span>
+                            <button type="button" class="stepper-btn" id="guestPlus" aria-label="Increase number of guests">+</button>
+                            <span class="stepper-label">guests</span>
+                        </div>
+                        <input type="hidden" id="resGuests" name="resGuests" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="resNote" class="form-label">Special Requests <span class="optional-lbl">(optional)</span></label>
+                        <textarea id="resNote" name="resNote" class="form-input text-area" placeholder="E.g., window seat, birthday celebration, dietary preferences..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="reservationSubmitBtn">
+                        <i class="fa-brands fa-whatsapp"></i> Confirm Reservation via WhatsApp
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -1270,7 +1473,7 @@
                             </div>
                             <div>
                                 <strong>Operational Hours</strong>
-                                <p>Open Daily: 8:00 AM – 10:00 PM</p>
+                    <p class="footer-contact-item"><i class="fa-regular fa-clock text-accent"></i> Daily: 8:00 AM - 10:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -1302,7 +1505,7 @@
                         </button>
                     </form>
 
-                    <div class="form-success-alert" id="formSuccessAlert" style="display: none;" role="alert">
+                    <div class="form-success-alert" id="formSuccessAlert" role="alert">
                         <i class="fa-solid fa-circle-check success-icon"></i>
                         <h4>Message Sent Successfully!</h4>
                         <p>Thank you for reaching out. A Dako Cafe manager will contact you shortly.</p>
@@ -1346,7 +1549,7 @@
                     <p class="footer-contact-item"><i class="fa-solid fa-phone text-accent"></i> <a href="tel:+251918106034">+251 918 106 034</a></p>
                     <p class="footer-contact-item"><i class="fa-solid fa-envelope text-accent"></i> <a href="mailto:info@dakocafe.com">info@dakocafe.com</a></p>
                     <p class="footer-contact-item"><i class="fa-solid fa-location-dot text-accent"></i> Main Highway Road, Dukem, Ethiopia</p>
-                    <p class="footer-contact-item"><i class="fa-regular fa-clock text-accent"></i> Daily: 8:00 AM – 10:00 PM</p>
+                    <p class="footer-contact-item"><i class="fa-regular fa-clock text-accent"></i> Daily: 8:00 AM - 10:00 PM</p>
                 </div>
             </div>
 
@@ -1359,6 +1562,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- ============ BACK TO TOP BUTTON ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll back to top of page">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
     <!-- ============ PERSISTENT DUAL FLOATING CTA ACTIONS ============ -->
     <div class="persistent-actions-container" aria-label="Persistent quick contact buttons">
@@ -1373,15 +1581,19 @@
     </div>
 
     <!-- ============ ACCESSIBLE MODALS FOR PRIVACY & TERMS ============ -->
-    <div class="modal-overlay" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display: none;">
+    <!-- <div class="modal-overlay" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-box">
             <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
-            <h3 class="modal-title" id="modalTitle">Legal Notice</h3>
+            <h3 class="modal-title" id="modalTitle">Welcome</h3>
             <div class="modal-body-content" id="modalBody">
-                <p>Loading details...</p>
+                <p>Dako Cafe</p>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <!-- ============ MAIN JAVASCRIPT ============ -->
+    <script src="script.js" defer></script>
 
 </body>
 </html>
+

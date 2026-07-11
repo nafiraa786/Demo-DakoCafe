@@ -1,5 +1,5 @@
-/* ==========================================================================
-   DAKO CAFE — Premium Main Interactivity Engine
+﻿/* ==========================================================================
+   DAKO CAFE - Premium Main Interactivity Engine
    Designed by Award-winning UI/UX, Performance & Frontend Experts.
    ========================================================================== */
 
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const scrollProgress = document.getElementById('scrollProgress');
     const hamburger = document.getElementById('hamburger');
+    const mobileNavClose = document.getElementById('mobileNavClose');
     const navLinks = document.getElementById('navLinks');
     const navLinkItems = document.querySelectorAll('.nav-link');
 
@@ -50,12 +51,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // STATE MANAGEMENT
     // ==========================================
-    const state = {
-        cart: {}, // Format: { itemId: { name: '', price: 0, qty: 0 } }
-        activeFilter: 'all',
-        itemsLimit: 9,
-        itemsPerLoad: 9
-    };
+   const state = {
+    cart: {},
+    activeFilter: "all",
+    expandedMenu: false
+};
+
+const MENU_VISIBLE_LIMIT = 4;
+const menuCardsArray = Array.from(menuCards);
+
+function getCategoryCards(filter) {
+    return menuCardsArray.filter(card => filter === "all" || card.dataset.category === filter);
+}
+
+function setActiveFilterButton(filter) {
+    filterBtns.forEach(btn => {
+        const isActive = btn.dataset.filter === filter;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', String(isActive));
+    });
+}
 
 
     // ==========================================
@@ -86,6 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
+    function syncNavForViewport() {
+        if (window.innerWidth > 1024) {
+            closeMobileNav();
+        }
+    }
+
     buildNavOverlay();
 
     hamburger.addEventListener('click', () => {
@@ -97,6 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', closeMobileNav);
+    }
+
     // Close links on select
     navLinkItems.forEach(link => {
         link.addEventListener('click', closeMobileNav);
@@ -106,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeMobileNav();
     });
+
+    window.addEventListener('resize', syncNavForViewport);
 
     // Scroll Progress Indicator & Sticky Navbar Glassmorphic styling
     function trackScroll() {
@@ -187,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (statusDesc) statusDesc.textContent = "Our espresso machines are hot and fresh! Come on in!";
         } else {
             // Setup Closed UI states
-            if (bannerText) bannerText.textContent = "We are closed right now. Opening hours: 8:00 AM – 10:00 PM daily.";
+            if (bannerText) bannerText.textContent = "We are closed right now. Opening hours: 8:00 AM - 10:00 PM daily.";
             if (bannerPulse) {
                 bannerPulse.className = "availability-pulse closed";
             }
@@ -208,60 +235,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     function processMenuDisplay() {
         const searchQuery = menuSearch.value.trim().toLowerCase();
-        let matchCount = 0;
-        let countInFilter = 0;
+        const currentFilter = state.activeFilter || 'all';
+        const categoryCards = getCategoryCards(currentFilter);
+        const visiblePreview = categoryCards.slice(0, MENU_VISIBLE_LIMIT);
+        const visibleIds = new Set(visiblePreview.map(card => card.id));
+
+        let visible = 0;
 
         menuCards.forEach(card => {
             const category = card.dataset.category;
             const title = card.querySelector('.menu-card-title').textContent.toLowerCase();
             const desc = card.querySelector('.menu-card-desc').textContent.toLowerCase();
-            
             const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery);
-            const matchesCategory = state.activeFilter === 'all' || category === state.activeFilter;
 
-            if (matchesCategory && matchesSearch) {
-                // If viewing all, check limits
-                if (state.activeFilter === 'all') {
-                    if (matchCount < state.itemsLimit) {
-                        card.classList.remove('hidden');
-                        card.style.animation = 'fadeInUp 0.4s ease forwards';
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                    matchCount++;
-                } else {
-                    // Category filter is selected, show matching ones
-                    card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.4s ease forwards';
-                    countInFilter++;
-                }
+            let shouldShow = false;
+
+            if (searchQuery !== '') {
+                shouldShow = matchesSearch && (currentFilter === 'all' || category === currentFilter);
+            } else if (!state.expandedMenu) {
+                shouldShow = visibleIds.has(card.id);
             } else {
-                card.classList.add('hidden');
+                shouldShow = currentFilter === 'all' || category === currentFilter;
             }
+
+            card.classList.toggle('hidden', !shouldShow);
+
+            if (shouldShow) visible++;
         });
 
-        // Toggle clear button
-        if (searchQuery.length > 0) {
-            clearSearch.style.display = 'block';
-        } else {
-            clearSearch.style.display = 'none';
-        }
+        menuEmptyState.style.display = visible === 0 ? 'block' : 'none';
 
-        // Handle Empty State
-        const totalVisible = state.activeFilter === 'all' ? matchCount : countInFilter;
-        if (totalVisible === 0) {
-            menuEmptyState.style.display = 'block';
+        if (!state.expandedMenu) {
+            seeMoreContainer.classList.remove('disabled');
+            seeMoreBtn.innerHTML = `<i class="fa-solid fa-book-open"></i><span>View Full Menu</span>`;
+        } else {
             seeMoreContainer.classList.add('disabled');
-        } else {
-            menuEmptyState.style.display = 'none';
-
-            // Handle see more visibility
-            if (state.activeFilter === 'all' && matchCount > state.itemsLimit) {
-                seeMoreContainer.classList.remove('disabled');
-                seeMoreBtn.querySelector('span').textContent = `Explore Remaining Items (${matchCount - state.itemsLimit}+)`;
-            } else {
-                seeMoreContainer.classList.add('disabled');
-            }
+            seeMoreBtn.innerHTML = `<i class="fa-solid fa-check"></i><span>Full Menu Visible</span>`;
         }
     }
 
@@ -275,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clearSearch) {
         clearSearch.addEventListener('click', () => {
             menuSearch.value = '';
+            state.expandedMenu = false;
             processMenuDisplay();
             menuSearch.focus();
         });
@@ -283,25 +293,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Category filter tab select
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-
             state.activeFilter = btn.dataset.filter;
-            state.itemsLimit = state.itemsPerLoad; // Reset visible count
+            state.expandedMenu = false;
+            setActiveFilterButton(state.activeFilter);
             processMenuDisplay();
         });
     });
 
     if (seeMoreBtn) {
         seeMoreBtn.addEventListener('click', () => {
-            state.itemsLimit += state.itemsPerLoad;
+            state.activeFilter = 'all';
+            state.expandedMenu = true;
+            setActiveFilterButton(state.activeFilter);
             processMenuDisplay();
+
+            menuGrid.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     }
+
+    processMenuDisplay();
 
 
     // ==========================================
@@ -366,17 +379,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cartCheckoutBtn) {
         cartCheckoutBtn.addEventListener('click', () => {
             let total = 0;
-            let message = "Hi Dako Cafe, I would like to place a fresh order!\n\n📋 *Order Details:*\n";
+            let message = "Hi Dako Cafe, I would like to place a fresh order!\n\nOrder Details:\n";
 
             Object.keys(state.cart).forEach(id => {
                 const item = state.cart[id];
                 const itemTotal = item.price * item.qty;
-                message += `• ${item.qty}x *${item.name}* (${item.price} ETB each) - _${itemTotal} ETB_\n`;
+                message += `- ${item.qty}x *${item.name}* (${item.price} ETB each) - ${itemTotal} ETB\n`;
                 total += itemTotal;
             });
 
-            message += `\n💵 *Grand Total:* *${total} ETB*\n`;
-            message += `\n📍 *Service Type:* Dine-in / Takeaway / Delivery (Dukem)`;
+            message += `\nGrand Total: *${total} ETB*\n`;
+            message += `\nService Type: Dine-in / Takeaway / Delivery (Dukem)`;
 
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/251918106034?text=${encodedMessage}`;
@@ -773,6 +786,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+
     // ==========================================
     // HERO ACCELERATED SUBTLE PARALLAX
     // ==========================================
@@ -791,7 +805,226 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+
+    // ==========================================
+    // BACK-TO-TOP BUTTON
+    // ==========================================
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+
+    // ==========================================
+    // ==========================================
+    // ==========================================
+    const reviewsCarousel = document.querySelector('.reviews-carousel');
+    const reviewCardsAll = document.querySelectorAll('.review-card');
+
+    if (reviewsCarousel && reviewCardsAll.length > 0) {
+        // Build dot navigation
+        const dotsContainer = document.createElement('div');
+        dotsContainer.className = 'review-dots';
+        dotsContainer.setAttribute('role', 'tablist');
+        dotsContainer.setAttribute('aria-label', 'Review navigation');
+
+        reviewCardsAll.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.className = 'review-dot' + (idx === 0 ? ' active' : '');
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', `Review ${idx + 1}`);
+            dot.dataset.idx = idx;
+            dotsContainer.appendChild(dot);
+        });
+
+        reviewsCarousel.parentNode.insertBefore(dotsContainer, reviewsCarousel.nextSibling);
+
+        let currentReviewIdx = 0;
+        let autoScrollTimer = null;
+        let isPaused = false;
+
+        function updateDots(idx) {
+            dotsContainer.querySelectorAll('.review-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === idx);
+            });
+        }
+
+        function scrollToReview(idx) {
+            const card = reviewCardsAll[idx];
+            if (!card) return;
+            reviewsCarousel.scrollTo({
+                left: card.offsetLeft - reviewsCarousel.offsetLeft,
+                behavior: 'smooth'
+            });
+            currentReviewIdx = idx;
+            updateDots(idx);
+        }
+
+        function nextReview() {
+            const next = (currentReviewIdx + 1) % reviewCardsAll.length;
+            scrollToReview(next);
+        }
+
+        function startAutoScroll() {
+            autoScrollTimer = setInterval(() => {
+                if (!isPaused) nextReview();
+            }, 4500);
+        }
+
+        // Dot click
+        dotsContainer.querySelectorAll('.review-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                scrollToReview(parseInt(dot.dataset.idx));
+            });
+        });
+
+        // Pause on hover
+        reviewsCarousel.addEventListener('mouseenter', () => { isPaused = true; });
+        reviewsCarousel.addEventListener('mouseleave', () => { isPaused = false; });
+
+        // Track scroll position to update dots
+        reviewsCarousel.addEventListener('scroll', () => {
+            const scrollLeft = reviewsCarousel.scrollLeft;
+            reviewCardsAll.forEach((card, idx) => {
+                const cardLeft = card.offsetLeft - reviewsCarousel.offsetLeft;
+                if (Math.abs(scrollLeft - cardLeft) < 40) {
+                    currentReviewIdx = idx;
+                    updateDots(idx);
+                }
+            });
+        }, { passive: true });
+
+        startAutoScroll();
+    }
+
+
+    // ==========================================
+    // ==========================================
+    // ==========================================
+    const guestMinusBtn = document.getElementById('guestMinus');
+    const guestPlusBtn = document.getElementById('guestPlus');
+    const guestCountDisplay = document.getElementById('guestCount');
+    const resGuestsInput = document.getElementById('resGuests');
+    let guestCount = 2;
+
+    if (guestMinusBtn && guestPlusBtn) {
+        guestMinusBtn.addEventListener('click', () => {
+            if (guestCount > 1) {
+                guestCount--;
+                guestCountDisplay.textContent = guestCount;
+                resGuestsInput.value = guestCount;
+                guestMinusBtn.style.transform = 'scale(0.85)';
+                setTimeout(() => { guestMinusBtn.style.transform = ''; }, 120);
+            }
+        });
+
+        guestPlusBtn.addEventListener('click', () => {
+            if (guestCount < 30) {
+                guestCount++;
+                guestCountDisplay.textContent = guestCount;
+                resGuestsInput.value = guestCount;
+                guestPlusBtn.style.transform = 'scale(0.85)';
+                setTimeout(() => { guestPlusBtn.style.transform = ''; }, 120);
+            }
+        });
+    }
+
+    const reservationForm = document.getElementById('reservationForm');
+
+    if (reservationForm) {
+        // Set minimum date to today
+        const resDateInput = document.getElementById('resDate');
+        if (resDateInput) {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            resDateInput.min = `${yyyy}-${mm}-${dd}`;
+        }
+
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const resName = document.getElementById('resName');
+            const resPhone = document.getElementById('resPhone');
+            const resDate = document.getElementById('resDate');
+            const resTime = document.getElementById('resTime');
+            const resNote = document.getElementById('resNote');
+
+            // Clear errors
+            reservationForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+
+            let valid = true;
+
+            if (!resName || resName.value.trim().length < 2) {
+                resName.closest('.form-group').classList.add('has-error');
+                valid = false;
+            }
+            if (!resPhone || resPhone.value.trim().length < 6) {
+                resPhone.closest('.form-group').classList.add('has-error');
+                valid = false;
+            }
+            if (!resDate || !resDate.value) {
+                resDate.closest('.form-group').classList.add('has-error');
+                valid = false;
+            }
+            if (!resTime || !resTime.value) {
+                resTime.closest('.form-group').classList.add('has-error');
+                valid = false;
+            }
+
+            if (!valid) return;
+
+            // Format date nicely
+            const dateObj = new Date(resDate.value + 'T00:00:00');
+            const dateFormatted = dateObj.toLocaleDateString('en-US', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+
+            const notesText = resNote && resNote.value.trim() ? resNote.value.trim() : 'None';
+
+            const message =
+                `Table Reservation Request - Dako Cafe\n\n` +
+                `Name: ${resName.value.trim()}\n` +
+                `Phone: ${resPhone.value.trim()}\n` +
+                `Date: ${dateFormatted}\n` +
+                `Time: ${resTime.value}\n` +
+                `Guests: ${guestCount}\n` +
+                `Special Requests: ${notesText}\n\n` +
+                `Please confirm my reservation. Thank you!`;
+
+            const encoded = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/251918106034?text=${encoded}`;
+
+            // Button feedback
+            const submitBtn = document.getElementById('reservationSubmitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Opening WhatsApp...';
+                setTimeout(() => {
+                    window.open(whatsappURL, '_blank', 'noopener');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Confirm Reservation via WhatsApp';
+                }, 800);
+            } else {
+                window.open(whatsappURL, '_blank', 'noopener');
+            }
+        });
+    }
+
 });
+
 
 // ==========================================
 // PWA OFFLINE SERVICE WORKER REGISTRATION

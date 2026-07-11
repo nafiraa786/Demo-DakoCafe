@@ -1,0 +1,42 @@
+﻿{
+  name: Dako Cafe — Ethiopian Coffee & Bistro,
+  short_name: DakoCafe,
+  description: Hand-roasted Ethiopian coffee, traditional breakfast, pizza & fresh juice at Dako Cafe in Dukem, Ethiopia.,
+  start_url: ./,
+  display: standalone,
+  background_color: #0b0a09,
+  theme_color: #c8956c,
+  orientation: portrait-primary,
+  lang: en-US,
+  icons: [
+    {
+      src: images/favicon.png,
+      sizes: 192x192,
+      type: image/png,
+      purpose: any maskable
+    },
+    {
+      src: images/gallery-coffee.png,
+      sizes: 512x512,
+      type: image/png,
+      purpose: any
+    }
+  ],
+  categories: [food, lifestyle],
+  shortcuts: [
+    {
+      name: Browse Menu,
+      short_name: Menu,
+      description: View Dako Cafe full menu,
+      url: ./#menu,
+      icons: [{ src: images/favicon.png, sizes: 192x192 }]
+    },
+    {
+      name: Reserve a Table,
+      short_name: Reserve,
+      description: Book a table at Dako Cafe,
+      url: ./#reservation,
+      icons: [{ src: images/favicon.png, sizes: 192x192 }]
+    }
+  ]
+}
